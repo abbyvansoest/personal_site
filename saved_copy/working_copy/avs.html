@@ -1,0 +1,93 @@
+<!-- Infinite scroll personal webpage developed by and for the 
+     benefit of Abby Van Soest -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Abby Van Soest</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+ <link rel="stylesheet" href="myStyle.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- smooth scrolling Javascript function, taken from http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_animate_smoothscroll -->
+  <script>
+  $(document).ready(function() {
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
+
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+        var hash = this.hash;
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 1000, function() {
+     
+          // Add hash (#) to URL when done scrolling
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+  });
+  </script>
+</head>
+
+
+<!--BODY-->
+<body>
+
+  <div id="bg">
+    <img src="http://i1259.photobucket.com/albums/ii548/abbyvansoest/view-from-dock-foggy_zpsc5t5yq6a.jpg" alt="">
+  </div>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#home">Abby Van Soest</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li> 
+        <li><a href="#resume">Resume</a></li> 
+        <li><a href="#contact">Contact</a></li> 
+      </ul>
+    </div>
+  </nav>
+
+  <div id="page0">
+    <a id="home" class="smooth"></a>
+    <h1>Abby Van Soest</h1>
+  </div>
+
+  <div id="page1">
+    <a id="about" class="smooth"></a>
+    <h1>About Me</h1>
+  </div>
+
+  <div id="page2">
+    <a id="portfolio" class="smooth"></a>
+    <h1>Portfolio</h1>
+  </div>
+
+  <div id="page3">
+    <a id="resume" class="smooth"></a>
+    <h1>Resume</h1>
+  </div>
+
+  <div id="page4">
+    <a id="contact" class="smooth"></a>
+    <h1>Contact</h1>
+  </div>
+
+</body>
+
+</html>
